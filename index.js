@@ -5,6 +5,9 @@ const PORT = 3000
 //MIDDLEWARE
 app.set('view engine', 'ejs')
 app.use(ejsLayouts)
+//controllers middleware
+app.use('/akerha', require('./controllers/akerha'))
+app.use('/ahbeh', require('./controllers/ahbeh'))
 
 //ROUTES
 
@@ -13,11 +16,6 @@ app.get('/',(req,res)=>{
     res.render('home.ejs')
 })
 
-//fav animals
-app.get('/animals', (req,res)=>{
-    const favAnimals=['bunnies','dogs','cats','horses']
-    res.render('animals.ejs',{animals:favAnimals})
-})
 
 
 
